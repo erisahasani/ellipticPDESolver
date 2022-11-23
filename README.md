@@ -7,4 +7,4 @@ where $L$ denotes an elliptic operator (we will elaborate below), $\Omega$ is so
 In particular for this project, we allow the operator $L$ to will be of the following standard nondivergence form: 
 $$Lu = - \sum_{i,j = 1}^n a^{ij}(x)u_{x_i x_j} + \sum_i b^i(x)u_{x_i}+c(x)u$$
 
-So the end goal of this project will be to numerically solve general elliptic problems where $Lu$ is defined as above. As a first step we consider the case where $Lu = -\Delta u$ starting from dimension $1$ and going up over time. 
+So the end goal of this project will be to numerically solve general elliptic problems where $Lu$ is defined as above. As a first step we consider the case where $Lu = -\Delta u$ starting from dimension $2$ and going up over time. 
