@@ -7,6 +7,6 @@ where $L$ denotes an elliptic operator (we will elaborate below), $\Omega$ is so
 In particular for this project, we allow the operator $L$ to will be of the following standard nondivergence form: 
 $$Lu = - \sum_{i,j = 1}^n a^{ij}(x)u_{x_i x_j} + \sum_i b^i(x)u_{x_i}+c(x)u$$
 
-So the end goal of this project will be to numerically solve general elliptic problems where $Lu$ is defined as above. As a first step we consider the case where $Lu = -\Delta u$ starting from dimension $2$ and going up over time. 
+So the end goal of this project will be to numerically solve general elliptic problems where $Lu$ is defined as above. As a first step we consider the case where $Lu = -\Delta u$ starting from dimension $2$ and going up over time.
 
-First, we develop code using finite differences, for a reference see Chapter 8 of *A first Course in the Numerical Analysis of Differential Equations* by Arieh Iserles.
+In this project, we will implement the finite element method for solving partial differential equations. In particular, we will use the following book as a reference on the mathematics of the method: *Numerical Solution of Partial Differential Equations by the Finite Element Method* by Claes Johnson.
