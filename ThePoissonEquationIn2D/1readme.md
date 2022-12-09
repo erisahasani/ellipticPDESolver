@@ -1,1 +1,0 @@
-In this section we are looking at the problem $\partial_{xx} u + \partial_{yy} u = f(x,y)$ on the domain $\Omega = (a,b)\times (c,d)$ where $a,b$ are user specified numbers. For a start we assume that $u=0$ on the boundary and $a=c=0$ and $b=d=1$, i.e we consider the problem on the unit square in $\mathbb{R}^2$.
