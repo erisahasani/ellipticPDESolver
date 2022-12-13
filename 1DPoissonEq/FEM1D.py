@@ -14,7 +14,7 @@ if inputtype == 0:
     for i in range(0,M+1):
         f[i]=float(input())
 elif inputtype == 1:
-    print("Enter the formula for the function f in terms of x: ")
+    print("Enter the formula for the function f in terms of x, use math. or np. and name of the function: ")
     usersImput = input()
     usersFunction = lambda x: eval(usersImput)
     node = 0
@@ -58,8 +58,4 @@ plt.xlabel("x axis")
 plt.ylabel("yNumerical axis") 
 plt.plot(x, yNumerical, color='r', label='Numerical')
 
-# plot analytical solution to test for the case f(x)=math.sin(x)
-
-# yAnalytical = np.sin(x)-np.sin(1)*x
-# plt.plot(x, yAnalytical, color='g', label='Analytical')
 plt.show()
