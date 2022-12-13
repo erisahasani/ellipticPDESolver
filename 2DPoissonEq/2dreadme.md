@@ -1,3 +1,12 @@
-In this section we are looking at the problem $\partial_{xx} u + \partial_{yy} u = f(x,y)$ on the domain $\Omega = (a,b)\times(c,d)$ where $a,b$ are user specified numbers. We assume that $u=g$ on the boundary where such data is specified by the user. 
+In this section we are looking at the problem $-\partial_{xx} u - \partial_{yy} u = f(x,y)$ on the domain $\Omega = (a,b)\times(c,d)$ where $a,b$ are user specified numbers. We assume that $u=g$ on the boundary where such data is specified by the user. 
 
-For simplicity, as a first attempt we take $a=c=0$ and $b=d=1$, i.e we consider the problem on the unit square in $\mathbb{R}^2$ and consider the case where $g=0$.
+For simplicity, as a first attempt we take $a=c=0$ and $b=d=1$, i.e we consider the problem on the unit square in $\mathbb{R}^2$.
+
+We separate the following two cases: 
+$$-\Delta u=f \quad \text{ in } \Omega$$
+$$u = 0 \quad \text{ on } \partial \Omega$$ 
+and
+$$-\Delta u=0 \quad \text{ in } \Omega$$
+$$u = g \quad \text{ on } \partial \Omega$$ 
+
+The first case is under the python file FEM2DLaplacian.py and the second is under the file FEM2Poisson.py.
