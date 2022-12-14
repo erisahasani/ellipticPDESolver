@@ -9,4 +9,6 @@ and
 $$-\Delta u=0 \quad \text{ in } \Omega$$
 $$u = g \quad \text{ on } \partial \Omega$$ 
 
-The first case is under the python file FEM2DLaplacian.py and the second is under the file FEM2Poisson.py.
+The first case is under the python file FEM2Poisson.py and the second is under the file FEM2DLaplacian.py.
+
+*Math Details on the FEM2Poisson.py*
