@@ -45,6 +45,7 @@ for i in range(0,M+1):
 yNumerical = []
 yNumerical = np.linalg.solve(A,b)
 
+
 # check if the solution is correct
 print(np.allclose(np.dot(A, yNumerical), b))
 
@@ -57,5 +58,10 @@ plt.title("Numerical Solution vs Analytical")
 plt.xlabel("x axis") 
 plt.ylabel("yNumerical axis") 
 plt.plot(x, yNumerical, color='r', label='Numerical')
+
+# plot analytical solution to test for the case f(x)=math.sin(x)
+
+yAnalytical = np.sin(x)-np.sin(1)*x
+plt.plot(x, yAnalytical, color='g', label='Analytical')
 
 plt.show()
