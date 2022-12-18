@@ -85,29 +85,9 @@ if __name__ == "__main__":
 
     X,Y = np.meshgrid(x,y)
 
-    # compute and plot the analytical solution, try -u_xx-u_yy = -2x(x-1)-2y(y-1)
-
-    xanal = np.linspace(0,1,M+2)
-    yanal = np.linspace(0,1,M+2)
-
-    Xanal,Yanal = np.meshgrid(xanal,yanal)
-
-
-    yAnalyticalMatrixform = np.zeros((M+2,M+2))
-    nodeX = h
-    nodeY = h
-    for i in range(1,M+1):
-        nodeX = h
-        for j in range(1,M+1):
-            yAnalyticalMatrixform[M-i+1,j] = nodeX*(nodeX-1)*nodeY*(nodeY-1)
-            nodeX += h
-        nodeY += h 
-
     fig = plt.figure()
     ax = plt.axes(projection='3d')
-
-    ax.plot_wireframe(X, Y, yAnalyticalMatrixform - yNumericalMatrixform , color='red')
-    # ax.plot_wireframe(Xanal, Yanal, yNumericalMatrixform, color='green')
+    ax.contour3D(X, Y, yNumericalMatrixform, 100, cmap='binary')
     ax.set_xlabel('x')
     ax.set_ylabel('y')
     ax.set_zlabel('z')
