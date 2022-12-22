@@ -8,20 +8,20 @@ def solution1D(b, partitionNumber,const1,const2):
     A = np.zeros((partitionNumber,partitionNumber))
     for i in range(0,partitionNumber):
         if i==0:
-            A[i][i] = -2/h - const1/2 + (const2*h)/3
+            A[i][i] = 2/h - const1/2 + (const2*h)/3
         elif i==partitionNumber-1:
-            A[i][i] = -2/h + const1/2 +(const2*h)/3
+            A[i][i] = 2/h + const1/2 +(const2*h)/3
         else:
-            A[i][i] = -2/h + (2*h*const2)/3
+            A[i][i] = 2/h + (2*h*const2)/3
 
     # top diagonal
-    A[0][1] = 1/h + const1/2 - (const2*h)/6
+    A[0][1] = -1/h + const1/2 - (const2*h)/6
     for i in range(2,partitionNumber):  
-        A[i-1][i] = 1/h + const1/2 + (const2*h)/6
+        A[i-1][i] = -1/h + const1/2 + (const2*h)/6
 
     # bottom diagonal
     for i in range(0,partitionNumber-1):
-        A[i+1][i] = 1/h - const1/2 + (const2*h)/6
+        A[i+1][i] = -1/h - const1/2 + (const2*h)/6
 
     print(A)
     # the problem now is reduced into solving a system of the form Ax = b 
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     M = int(input("Enter the number of partitions, M: "))
 
-    #input the data for the f function in the problem -u'' = f
+    #input the data for the f function in the problem -u''+bu'+cu = f
     inputtype = int(input("Enter 1 if you'd like to specify a formula for f and 0 if you'd like to enter its values manually at each point of the partition: "))
     b = np.zeros(M)
     h = 1/(M+1)
@@ -67,9 +67,18 @@ if __name__ == "__main__":
 
     # plot the numerical solution
     x = np.linspace(0,1,M+2)
-    plt.title("Numerical Solution") 
+    plt.title("Numerical Solution vs Analytical") 
     plt.xlabel("x axis") 
     plt.ylabel("yNumerical axis") 
     plt.plot(x, yNumerical, color='r', label='Numerical')
+
+    xAnalytical = np.linspace(0,1,100)
+    yAnalytical = xAnalytical **2-xAnalytical 
+    
+    # plot analytical solution to test for the case -u''+2u'+4u= 4x*2
+    plt.plot(xAnalytical, yAnalytical, color='g', label='Analytical')
+
+    plt.show()
+
 
     plt.show()
