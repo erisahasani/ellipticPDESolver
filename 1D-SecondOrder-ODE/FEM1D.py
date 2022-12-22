@@ -72,11 +72,11 @@ if __name__ == "__main__":
     plt.ylabel("yNumerical axis") 
     plt.plot(x, yNumerical, color='r', label='Numerical')
 
-    xAnalytical = np.linspace(0,1,100)
-    yAnalytical = xAnalytical **2-xAnalytical 
+    # xAnalytical = np.linspace(0,1,100)
+    # yAnalytical = xAnalytical **2-xAnalytical 
     
-    # plot analytical solution to test for the case -u''+2u'+4u= 4x*2
-    plt.plot(xAnalytical, yAnalytical, color='g', label='Analytical')
+    # # plot analytical solution to test for the case -u''+2u'+4u= 4x*2
+    # plt.plot(xAnalytical, yAnalytical, color='g', label='Analytical')
 
     plt.show()
 
