@@ -37,10 +37,10 @@ def solutionPoisson2D(b,partitionNumber):
             A[i-1][i] = -1
     # the problem now is reduced into solving a system of the form Ax = b 
     yNumerical = np.linalg.solve(A,b)
+    # check if the solution is correct
     if not np.allclose(np.dot(A, yNumerical), b):
         print('Problem not solved')
         raise RuntimeError
-    # check if the solution is correct
     
     return yNumerical
 
