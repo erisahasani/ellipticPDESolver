@@ -9,8 +9,10 @@ and
 $$-\Delta u=0 \quad \text{ in } \Omega$$
 $$u = g \quad \text{ on } \partial \Omega$$ 
 
-The first case is under the python file FEM2Poisson.py and the second is under the file FEM2DLaplacian.py.
+The first case is under the python file *FEM2Poisson.py* and the second is under the file *FEM2DLaplacian.py.*
 
 **Some Details on the FEM2Poisson.py File**
 
 Since the problem is now two dimensional, the stifness matrix will be even larger. In particular, it will be of magnitude $M^2 \times M^2$, where $M$ is the number of partitions in each direction specified by the user. To be consistent with the referenced book, we use the same node ennumeration for our triagulated square (see Fig. 1.10 on p. 31 of the book).
+
+**Some Details on the FEM2DLaplacian.py File**
