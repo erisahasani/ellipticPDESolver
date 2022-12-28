@@ -16,3 +16,5 @@ The first case is under the python file *FEM2Poisson.py* and the second is under
 Since the problem is now two dimensional, the stifness matrix will be even larger. In particular, it will be of magnitude $M^2 \times M^2$, where $M$ is the number of partitions in each direction specified by the user. To be consistent with the referenced book, we use the same node ennumeration for our triagulated square (see Fig. 1.10 on p. 31 of the book).
 
 **Some Details on the FEM2DLaplacian.py File**
+
+First, we save the function $g$ defined on the boundary as an $M+2$ by $M+2$ matrix, that has the boundary data on the first and last columns and rows of the matrix and is zero in the interior. For graphing purposes, this is intuitive since we can think of such matrix being the $z$ component of the 3D plot sittig above the $x,y$ grid.
