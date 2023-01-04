@@ -41,7 +41,7 @@ def solutionPoisson2D(b,partitionNumber):
     if not np.allclose(np.dot(A, yNumerical), b):
         print('Problem not solved')
         raise RuntimeError
-    
+
     return yNumerical
 
 
@@ -71,7 +71,7 @@ if __name__ == "__main__":
     yNumerical = solutionPoisson2D(b,M)
 
 
-    # we perform the reveersed operations to lines 22-28 in order to put the solution data in a matrix
+    # we perform the reversed operations to lines 22-28 in order to put the solution data in a matrix
     yNumericalMatrixform = np.zeros((M+2,M+2))
     for i in range(1,M+1):
         for j in range(1,M+1):
