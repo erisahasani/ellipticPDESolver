@@ -3,7 +3,6 @@ import math
 import matplotlib.pyplot as plt
 
 
-
 def boundary_data(partitionNumber):
     M = partitionNumber
     #save the boundary data around the square (0,1)x(0,1) as specified below
@@ -15,7 +14,6 @@ def boundary_data(partitionNumber):
         print("Enter the boundary data for y=0, x in [0,1): ")
         for i in range(0,M+2):
             g[M+1][i]=float(input())
-            
             
         print("Enter the boundary data for x=1, y in [0,1): ")
         for i in range(0,M+2):
@@ -61,7 +59,6 @@ def boundary_data(partitionNumber):
             g[i][0] = usersFunction(node)
             node = node + h
 
-
     return g
 
 
@@ -72,7 +69,7 @@ def vector_b(partitionNumber,g):
     inputtype = int(input("Enter 1 if you'd like to specify a formula for f and 0 if you'd like to enter its values manually at each point of the partition: "))
 
     if inputtype==0:
-        print("Enter data for f following the convention describen in the 2readme.md file: ")
+        print("Enter data for f following the convention describen in the 2D-readme.md file: ")
         for i in range(0,partitionNumber):
             # here we multiply by a factor of h**2 because b_i = f_i*h**2
             b[i] = float(input())*(h**2)
@@ -116,7 +113,7 @@ def solutionPoisson2D(partitionNumber,b):
     N = (partitionNumber)**2
     A = np.zeros((N,N))
  
-    # Define the matrix A based on the five point formula 
+    # Define the stifness matrix A
     for i in range(0,N):
         A[i][i] = 4
         if i+partitionNumber <N:
@@ -133,8 +130,6 @@ def solutionPoisson2D(partitionNumber,b):
         if (i)% partitionNumber !=0:
             A[i-1][i] = -1
     
-    print("This is b")
-    print(b)
     # the problem now is reduced into solving a system of the form Ax = b 
     yNumerical = np.linalg.solve(A,b)
     # check if the solution is correct
@@ -153,19 +148,14 @@ if __name__ == "__main__":
     
     g = boundary_data(M)
     b = vector_b(M,g)
-    print("This is the matrix for g:")
-    print(g)
-
     yNumerical = solutionPoisson2D(M,b)
-    print("this is the solution in vector form")
-    print(yNumerical)
+
     # now we save the numerical solution in the interior of matrix g, i.e writting the solution in matrix form
     for i in range(1,M+1):
         for j in range(1,M+1):
             g[M-i+1,j] = yNumerical[(i-1)*M+j-1]
-    print("this is g after the solution is added")
-    print(g)
-    # Plot the boundary data for a visual representation
+
+    # Finally, we plot the solution
     x = np.linspace(0,1,M+2)
     y = np.linspace(0,1,M+2)
 

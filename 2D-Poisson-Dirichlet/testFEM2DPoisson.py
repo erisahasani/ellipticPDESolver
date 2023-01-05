@@ -1,6 +1,6 @@
+#this is a test file, it can run using pytest filename
 import FEM2DPoisson
 import numpy as np
-import math
 
 # A test case for -Δu = -2x(x-1) - 2y(y-1) which has the analytical solution u = x(x-1)y(y-1)
 def test_answer():
