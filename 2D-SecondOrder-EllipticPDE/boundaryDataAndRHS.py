@@ -2,6 +2,7 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 
+
 def boundary_data(partitionNumber):
     M = partitionNumber
     h = 1/(M+1)
